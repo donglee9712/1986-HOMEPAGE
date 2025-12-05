@@ -1,4 +1,8 @@
 (function () {
+  const BUSINESS_INQUIRY_URL =
+    "https://1986.imweb.me/?preview_mode=1&modal_menu=m202312121200775a0ce8d";
+  const WORK_URL = "https://1986.imweb.me/WORK?preview_mode=1";
+
   const ensureNavFonts = () => {
     const kitId = "yqm6tla";
     if (document.querySelector(`link[data-coco-nav-kit="${kitId}"]`)) return;
@@ -24,6 +28,27 @@
     } catch (_) {
       return href.toLowerCase();
     }
+  };
+
+  const ensureBusinessInquiryLinks = () => {
+    const normalize = (text) => (text || "").replace(/\s+/g, "");
+    document.querySelectorAll("a").forEach((link) => {
+      if (normalize(link.textContent) !== "비즈니스문의") return;
+      link.href = BUSINESS_INQUIRY_URL;
+      link.setAttribute("target", "_blank");
+      link.setAttribute("rel", "noopener noreferrer");
+    });
+  };
+
+  const ensureWorkLinks = () => {
+    const normalize = (text) => (text || "").replace(/\s+/g, "").toLowerCase();
+    document.querySelectorAll("a").forEach((link) => {
+      const label = normalize(link.textContent);
+      if (label !== "work" && label !== "워크") return;
+      link.href = WORK_URL;
+      link.removeAttribute("target");
+      link.removeAttribute("rel");
+    });
   };
 
   const initNav = (container) => {
@@ -141,8 +166,11 @@
 
   document.addEventListener("DOMContentLoaded", () => {
     const containers = document.querySelectorAll("[data-coco-nav]");
-    if (!containers.length) return;
-    ensureNavFonts();
-    containers.forEach(initNav);
+    if (containers.length) {
+      ensureNavFonts();
+      containers.forEach(initNav);
+    }
+    ensureBusinessInquiryLinks();
+    ensureWorkLinks();
   });
 })();

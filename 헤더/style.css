@@ -1,0 +1,296 @@
+body.nav-locked {
+  overflow: hidden;
+}
+
+[data-coco-nav] {
+  margin: 0;
+  padding: 60px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  background-color: transparent;
+  color: #fdfdfd;
+  font-family: "source-han-sans-korean", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  width: 100%;
+}
+
+[data-coco-nav],
+[data-coco-nav] *::before,
+[data-coco-nav] *::after,
+[data-coco-nav] * {
+  box-sizing: border-box;
+}
+
+[data-coco-nav] .top-nav {
+  width: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+[data-coco-nav] .top-nav__logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 60px;
+  top: 50%;
+  transform: translateY(-50%);
+  text-decoration: none;
+}
+
+[data-coco-nav] .top-nav__logo img {
+  display: block;
+  height: 43px;
+  width: auto;
+}
+
+[data-coco-nav] .nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  padding: 14px;
+  margin-left: auto;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+[data-coco-nav] .nav-toggle span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 26px;
+  height: 2.5px;
+  border-radius: 999px;
+  background: #000000;
+  transition: transform 0.25s ease, opacity 0.25s ease;
+  transform-origin: center;
+}
+
+[data-coco-nav] .nav-toggle span:nth-child(1) {
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+[data-coco-nav] .nav-toggle span:nth-child(2) {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+[data-coco-nav] .nav-toggle span:nth-child(3) {
+  display: none;
+}
+
+[data-coco-nav] .nav-toggle.is-open span:nth-child(1) {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+[data-coco-nav] .nav-toggle.is-open span:nth-child(2) {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+[data-coco-nav] .nav-close {
+  display: none;
+  background: none;
+  border: none;
+  width: 52px;
+  height: 52px;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 5;
+}
+
+[data-coco-nav] .nav-close::before,
+[data-coco-nav] .nav-close::after {
+  content: "";
+  position: absolute;
+  width: 26px;
+  height: 2px;
+  border-radius: 999px;
+  background: #ffffff;
+}
+
+[data-coco-nav] .nav-close::before {
+  transform: rotate(45deg);
+}
+
+[data-coco-nav] .nav-close::after {
+  transform: rotate(-45deg);
+}
+
+[data-coco-nav] .mobile-nav-backdrop {
+  display: none;
+}
+
+[data-coco-nav] .nav-pill {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 4.75px;
+  position: fixed;
+  top: clamp(12px, 4vw, 28px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(165deg, #3d3d3d, #000000);
+  padding: 13px 4.75px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 14px 28px rgba(10, 0, 10, 0.2);
+  z-index: 20;
+}
+
+[data-coco-nav] .nav-pill__indicator {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: calc(100% - 9.5px);
+  width: var(--indicator-width, 0);
+  transform: translate(var(--indicator-x, 20px), -50%);
+  border-radius: 999px;
+  background-color: #ffffff;
+  box-shadow: 0 12px 24px rgba(26, 26, 28, 0.18);
+  opacity: var(--indicator-opacity, 0);
+  transition: width 0.35s ease, transform 0.35s ease, opacity 0.2s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+[data-coco-nav] .nav-pill__list {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  z-index: 1;
+}
+
+[data-coco-nav] .nav-pill__link {
+  position: relative;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  border: none;
+  box-shadow: none;
+  transition: color 0.25s ease;
+  padding: 8px 18px;
+  border-radius: 999px;
+  z-index: 1;
+}
+
+[data-coco-nav] .nav-pill__link:hover {
+  color: #ff7f00;
+}
+
+[data-coco-nav] .nav-pill__link.is-active {
+  color: #1f1f1f;
+}
+
+@media (max-width: 680px) {
+  [data-coco-nav] {
+    padding: 24px 16px 16px;
+  }
+
+  [data-coco-nav] .top-nav {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 0 0;
+  }
+
+  [data-coco-nav] .top-nav__logo {
+    position: static;
+    transform: none;
+    margin: 0 0 0 10px;
+  }
+
+  [data-coco-nav] .nav-toggle {
+    display: inline-flex;
+  }
+
+  [data-coco-nav] .nav-pill {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 28px;
+    padding: clamp(52px, 16vw, 120px) clamp(28px, 10vw, 48px) 40px;
+    background: rgba(4, 5, 18, 0.96);
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  [data-coco-nav] .nav-pill.is-mobile-open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  [data-coco-nav] .nav-pill__list {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+    width: 100%;
+  }
+
+  [data-coco-nav] .nav-pill__link {
+    padding: 0;
+    font-size: 1.1rem;
+    letter-spacing: 0.14em;
+  }
+
+  [data-coco-nav] .nav-pill__indicator {
+    display: none;
+  }
+
+  [data-coco-nav] .nav-close {
+    display: inline-flex;
+    bottom: clamp(24px, 8vw, 56px);
+    right: clamp(10px, 5vw, 24px);
+  }
+
+  [data-coco-nav] .mobile-nav-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(2px);
+    display: block;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+
+  [data-coco-nav] .mobile-nav-backdrop.is-visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  [data-coco-nav] {
+    padding: 18px 12px 12px;
+  }
+
+  [data-coco-nav] .nav-pill {
+    padding: clamp(48px, 18vw, 80px) 24px 32px;
+  }
+
+  [data-coco-nav] .nav-pill__link {
+    font-size: 1rem;
+  }
+}

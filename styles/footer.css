@@ -1,0 +1,279 @@
+/* 1986 Footer - Optimized CSS */
+
+/* 기본 리셋 */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'SMTOWN', 'Pretendard', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.428;
+  color: #000;
+  background-color: #fff;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* 푸터 기본 스타일 */
+.site-footer {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  padding: 70px;
+  line-height: 1.6;
+  background-color: #000;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  flex-wrap: wrap;
+}
+
+.site-footer,
+.site-footer a,
+.site-footer span,
+.site-footer .menu-label,
+.site-footer .footer-menu .menu,
+.site-footer .footer-menu .menu li,
+.site-footer .footer-menu .sub-menu,
+.site-footer .footer-menu .sub-menu li {
+  line-height: 1.6;
+  color: #fff;
+}
+
+/* 로고 컬럼 */
+.logo-column {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.logo-1986 img,
+.sm-ent-logo img {
+  width: 253px;
+  height: auto;
+  display: block;
+}
+
+/* 기본 소셜 버튼 - 데스크톱 */
+.social-links {
+  display: flex;
+  gap: 25.5px;
+  margin-top: 115px;
+}
+
+.social-links a {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  opacity: 1;
+  transition: opacity 0.5s ease, transform 0.3s ease;
+}
+
+.social-links a:last-child {
+  margin-right: 0;
+}
+
+.social-links a:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* 개별 소셜 버튼 */
+.instagram-button {
+  background-image: url('https://cdn.imweb.me/upload/S20200402f6a4097001dd3/284f92a850d2b.png') !important;
+}
+
+.댕댕페스티벌-instagram-button,
+.dangdang-instagram-button {
+  background-image: url('https://cdn.imweb.me/upload/S20200402f6a4097001dd3/f5aff5d1c64ef.png') !important;
+}
+
+.빵빵런-instagram-button,
+.bbangbbang-instagram-button {
+  background-image: url('https://cdn.imweb.me/upload/S20200402f6a4097001dd3/dd07906431e29.png') !important;
+}
+
+.라이프마라톤-instagram-button,
+.marathon-instagram-button {
+  background-image: url('https://cdn.imweb.me/upload/S20200402f6a4097001dd3/8ce837c682ac5.png') !important;
+}
+
+.naver-blog-button {
+  background-image: url('https://cdn.imweb.me/upload/S20200402f6a4097001dd3/6dc02a3dfb82b.png') !important;
+}
+
+/* 메뉴 컬럼 */
+.menu-column {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.footer-menu {
+  color: #fff;
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* 메뉴와 서브메뉴 각각 기본 block */
+.footer-menu .menu,
+.footer-menu .sub-menu {
+  display: block;
+  vertical-align: top;
+  margin: 0;
+  padding: 0;
+}
+
+/* 메뉴 리스트 항목 여백 */
+.footer-menu .menu li {
+  margin-bottom: 40px;
+  margin-right: 50px;
+  display: block;
+}
+
+.footer-menu .sub-menu li {
+  margin-bottom: 8px;
+  display: block;
+  line-height: 1.6;
+  margin-top: 5px;
+}
+
+.footer-menu .sub-menu li:first-child {
+  margin-top: 0;
+}
+
+.footer-menu .sub-menu li:last-child {
+  margin-bottom: 0;
+}
+
+.footer-menu .menu-item a {
+  display: block;
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.footer-menu .menu-item a:hover {
+  text-decoration: underline;
+}
+
+/* Privacy 링크 */
+.privacy-link {
+  color: #fff;
+  display: block;
+  font-weight: 700;
+}
+
+.privacy-link:hover {
+  text-decoration: underline;
+}
+
+/* Copyright */
+.copyright {
+  color: #b0b7c0;
+  font-size: 0.8em;
+  opacity: 0.6;
+  text-transform: uppercase;
+  margin-top: 10px;
+  width: 100%;
+  order: 999;
+}
+
+/* 반응형 간격 조정 */
+@media screen and (max-width: 1800px) {
+  .footer-menu .menu li {
+    margin-bottom: 35px;
+  }
+  .footer-menu .sub-menu li {
+    margin-bottom: 7px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .footer-menu .menu li {
+    margin-bottom: 30px;
+  }
+  .footer-menu .sub-menu li {
+    margin-bottom: 6px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .site-footer {
+    flex-direction: column;
+    padding: 40px 20px;
+  }
+
+  .logo-1986 img,
+  .sm-ent-logo img {
+    width: 185px;
+  }
+
+  .logo-column,
+  .menu-column {
+    display: block;
+  }
+
+  .menu-column {
+    margin-top: 40px;
+  }
+
+  .social-links {
+    margin-top: 30px;
+    gap: 12px;
+  }
+
+  .social-links a {
+    width: 30px;
+    height: 30px;
+    background-size: contain !important;
+    margin-top: 0;
+  }
+
+  .footer-menu .menu li {
+    margin-bottom: 20px;
+    margin-right: 0;
+  }
+
+  .footer-menu .sub-menu li {
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .site-footer {
+    padding: 30px 15px;
+  }
+
+  .social-links {
+    gap: 6px;
+    margin-top: 30px;
+  }
+
+  .footer-menu .menu {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .footer-menu .menu li {
+    margin-bottom: 20px;
+    margin-right: 0;
+  }
+}

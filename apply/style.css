@@ -1,0 +1,123 @@
+@import url('./ScrollStack.css');
+
+body {
+  background: #f0f0f0;
+  background-image: none;
+  color: #0f0f0f;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+.new-home-section {
+  padding: clamp(60px, 8vw, 100px) 4vw clamp(60px, 8vw, 100px) 4vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  min-height: auto;
+  text-align: center;
+  margin: 0;
+  border: 0;
+  background: #f0f0f0;
+  background-image: none;
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+}
+
+.partners-heading-block {
+  max-width: 720px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.partners-tagline {
+  font-size: 0.9rem;
+  letter-spacing: 0.2em;
+  font-weight: 700;
+  margin: 0;
+  color: #ff7f00;
+}
+
+.partners-title {
+  font-size: clamp(32px, 6vw, 56px);
+  margin: 0;
+}
+
+.partners-subtitle {
+  margin: 0;
+  color: #333;
+  line-height: 1.7;
+}
+
+.scroll-stack-section {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  width: 100%;
+}
+
+.scroll-stack-scroller {
+  width: 100vw;
+  max-width: none;
+  height: min(78vh, 880px);
+  background: transparent;
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  padding: 10px clamp(6vw, 8vw, 120px) clamp(30vh, 40vh, 520px);
+  scrollbar-width: none; /* Firefox */
+  margin-left: calc(50% - 50vw);
+  margin-top: 0;
+}
+
+.scroll-stack-scroller::-webkit-scrollbar {
+  display: none; /* Chrome, Edge, Safari */
+}
+
+.scroll-stack-card {
+  background: var(--panel, #ffffff);
+  border: 2px solid var(--border-strong, rgba(20, 17, 14, 0.18));
+  border-radius: clamp(32px, 6vw, 48px);
+  box-shadow: 0 24px 60px rgba(16, 12, 8, 0.2);
+  padding: clamp(32px, 5vw, 48px);
+  color: #161616;
+}
+
+.scroll-stack-card h2 {
+  margin: 0 0 12px;
+  font-size: 1.4rem;
+}
+
+.scroll-stack-card p {
+  margin: 0;
+  color: #404040;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  body {
+    background: #ffffff;
+  }
+
+  main {
+    padding-left: 6vw;
+    padding-right: 6vw;
+  }
+
+  .scroll-stack-scroller {
+    height: 72vh;
+    padding: 10px 6vw 38vh;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    margin-top: 0;
+  }
+
+  .scroll-stack-card {
+    height: auto;
+    min-height: 16rem;
+    padding: 2.2rem;
+  }
+}

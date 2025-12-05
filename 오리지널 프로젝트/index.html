@@ -1,0 +1,1672 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>1986 리뉴얼 | 스크롤 인터랙션 데모</title>
+    <meta
+      name="description"
+      content="1986 리뉴얼 프로젝트용 인터랙티브 원페이지 스크롤 레이아웃 데모"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../헤더/style.css" />
+    <link rel="stylesheet" href="../푸터/footer.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/yqm6tla.css" />
+  </head>
+  <body>
+    <div data-coco-nav data-nav-root="../">
+      <header class="top-nav">
+        <a class="top-nav__logo" data-page="index.html" href="#">
+          <img
+            src="https://cdn.imweb.me/upload/S20200402f6a4097001dd3/e5128b817c05c.png"
+            alt="1986 logo"
+          />
+        </a>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="메뉴 열기"
+          aria-expanded="false"
+          aria-controls="primaryNav"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="nav-pill" id="primaryNav" aria-label="Primary navigation">
+          <button class="nav-close" type="button" aria-label="메뉴 닫기"></button>
+          <span class="nav-pill__indicator" aria-hidden="true"></span>
+          <ul class="nav-pill__list">
+            <li>
+              <a class="nav-pill__link" data-page="about.html" href="#">ABOUT</a>
+            </li>
+            <li>
+              <a
+                class="nav-pill__link"
+                data-page="오리지널 프로젝트/index.html"
+                href="#"
+                >ORIGINAL PROJECTS</a
+              >
+            </li>
+            <li><a class="nav-pill__link" data-page="work.html" href="#">WORK</a></li>
+          </ul>
+        </nav>
+        <div class="mobile-nav-backdrop" aria-hidden="true"></div>
+      </header>
+    </div>
+
+    <nav class="side-nav" aria-label="메인 섹션 내비게이션">
+      <button
+        type="button"
+        class="nav-item is-active"
+        data-target="#bbang-run"
+        aria-current="true"
+        style="--item-color: #442ba9; --item-text: #ffffff"
+      >
+        <span class="nav-index">01</span>
+        <span class="nav-label">빵빵런</span>
+      </button>
+      <button
+        type="button"
+        class="nav-item"
+        data-target="#coffee-bbang-run"
+        style="--item-color: #79c9f1; --item-text: #000000"
+      >
+        <span class="nav-index">02</span>
+        <span class="nav-label">커피빵빵런</span>
+      </button>
+      <button
+        type="button"
+        class="nav-item"
+        data-target="#bbang-trail-run"
+        style="--item-color: #00ad6a; --item-text: #ffffff"
+      >
+        <span class="nav-index">03</span>
+        <span class="nav-label">빵트레일런</span>
+      </button>
+      <button
+        type="button"
+        class="nav-item"
+        data-target="#ddangddang-run"
+        style="--item-color: #ffe600; --item-text: #000000"
+      >
+        <span class="nav-index">04</span>
+        <span class="nav-label">댕댕런</span>
+      </button>
+      <button
+        type="button"
+        class="nav-item"
+        data-target="#ddangddang-trekking"
+        style="--item-color: #b8d052; --item-text: #000000"
+      >
+        <span class="nav-index">05</span>
+        <span class="nav-label">댕댕트레킹</span>
+      </button>
+      <button
+        type="button"
+        class="nav-item"
+        data-target="#seoul-life-marathon"
+        style="--item-color: #ef5f17; --item-text: #ffffff"
+      >
+        <span class="nav-index">06</span>
+        <span class="nav-label">서울라이프마라톤</span>
+      </button>
+      <button
+        type="button"
+        class="nav-item"
+        data-target="#ggwaja-run"
+        style="--item-color: #e284b0; --item-text: #ffffff"
+      >
+        <span class="nav-index">07</span>
+        <span class="nav-label">꽈자런</span>
+      </button>
+      <button
+        type="button"
+        class="nav-item"
+        data-target="#dust-school"
+        style="--item-color: #000000; --item-text: #ffffff"
+      >
+        <span class="nav-index">08</span>
+        <span class="nav-label">먼지학교</span>
+      </button>
+    </nav>
+
+    <main>
+      <section>
+      <section
+        id="bbang-run"
+        class="section"
+        data-progress="0"
+        style="--hero-image: url('https://cdn.imweb.me/upload/S20200402f6a4097001dd3/3df0cd778c26f.png'); --hero-text: #ffffff; --title-color: #ffffff; --notice-color: rgba(255,255,255,0.95); --card-accent: #442ba9"
+      >
+        <div class="section-surface">
+          <div class="section-hero">
+            <div class="section-notice">
+              <span>Since 2021</span>
+              <span class="section-notice__count">01 / 08</span>
+            </div>
+            <div class="section-hero__body">
+              <h3 class="section-title">빵빵런</h3>
+              <a
+                class="section-hero__cta"
+                href="https://www.1986.co.kr/250426"
+                aria-label="빵빵런 자세히 보기"
+              >자세히 보기</a>
+            </div>
+          </div>
+          <div class="section-body">
+            <div class="section-copy">
+              <span class="tagline">City Fun Run</span>
+              <h3 class="section-heading">
+                살찌는 건 싫지만,<br />
+                빵은 먹고 싶어!
+              </h3>
+              <p class="section-description">
+                빵을 좋아하는 사람들을 위한 러닝 행사, 완주 후 정성껏 준비된 빵가방을 받아 가는 맛있고 유쾌한 러닝 축제였습니다.
+                빵을 먹는 행복을 더 멀리 전하기 위해 참가자 1인당 1개의 빵을 기부했습니다.
+              </p>
+            </div>
+            <div class="grid">
+              <div class="card">
+                <strong>캠페인 (26,100개 기부)</strong>
+                <span>
+                  ‘빵빵런’은 참가자 1인당 1개의 빵(베이커리류)을
+                  지역 아동센터에 기부합니다.
+                  달리는 즐거움이 누군가에게는 따뜻한 나눔이 됩니다.
+                </span>
+              </div>
+                 <div class="card">
+                <strong>베스트 빵빵드레서</strong>
+                <span>
+                  빵둥이들의 스타일 대결!
+                  가장 멋진 빵빵드레서에게는
+                  달콤하고 빵빵한 선물이 기다리고 있어요 🥐✨
+
+                </span>
+              </div>
+                 <div class="card">
+                <strong>포토존</strong>
+                <span>
+                  “달리고, 꾸미고, 먹고 오늘은 내가 주인공!”
+                  귀여운 소품과 나만의 빵빵패션으로
+                  완주의 순간을 가장 빵빵하게 즐겨보세요. 🎉
+                </span>
+              </div>
+                 <div class="card">
+                <strong>이벤트존</strong>
+                <span>
+                  “달렸다면, 이제 즐길 차례!”
+                  완주 후에도 계속되는 축제의 순간 ✨
+                다양한 이벤트존이 빵둥이들을 기다리고 있어요! 🎈
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+                  <div class="section-surface section-surface--poster">
+        <div class="poster-wrapper">
+          <img
+            src="https://cdn.imweb.me/upload/S20200402f6a4097001dd3/3df0cd778c26f.png"
+            alt="빵빵런 공식 포스터"
+          />
+        </div>
+        <div class="poster-caption">
+          <strong>빵빵런2025 in 대전</strong>
+          <p>
+'빵빵런 2025 in 대전'은 빵의 도시, 대전에서 펼쳐진 빵가득, 행복가득 마라톤 입니다.
+현장의 생생한 열기와 분위기를 느끼고 싶다면, 아래 버튼을 눌러 보세요.
+          </p>
+          <a
+            class="poster-download"
+            href="#bbang-run"
+            aria-label="포스터 자세히 보기"
+            >자세히 보기</a
+          >
+        </div>
+      </div>
+
+      <div class="section-surface section-surface--poster">
+        <div class="poster-wrapper">
+          <a
+            class="poster-link"
+            href="https://www.1986.co.kr/250426"
+            aria-label="빵빵런2025 자세히 보기"
+          >
+            <img
+              src="https://cdn.imweb.me/upload/S20200402f6a4097001dd3/f4057fdc1b8f7.png"
+              alt="빵빵런 공식 포스터"
+            />
+          </a>
+        </div>
+        <div class="poster-caption">
+          <strong>빵빵런2025</strong>
+          <p>
+            빵을 좋아하는 사람들을 위한 러닝 행사, <빵빵런2025>이 쾌청한 4월의 한강에서 열렸습니다.
+            현장의 생생한 열기와 분위기를 느끼고 싶다면, 아래 버튼을 눌러 보세요.
+          </p>
+          <a
+            class="poster-download"
+            href="https://www.1986.co.kr/250426"
+            aria-label="빵빵런2025 자세히 보기"
+            >자세히 보기</a
+          >
+        </div>
+      </div>
+
+        <div class="section-surface section-surface--poster">
+        <div class="poster-wrapper">
+          <a
+            class="poster-link"
+            href="https://www.1986.co.kr/20240908"
+            aria-label="빵빵런2024 in 대전 자세히 보기"
+          >
+            <img
+              src="https://cdn.imweb.me/upload/S20200402f6a4097001dd3/230fdcf000abc.png"
+              alt="빵빵런 공식 포스터"
+            />
+          </a>
+        </div>
+        <div class="poster-caption">
+          <strong>빵빵런2024 in 대전</strong>
+          <p>
+            <빵빵런2024 in 대전>은 4월 성공적인 빵빵런 개최에 힘 입어 처음으로 대전에서 개최되어 
+            더욱 많은 빵둥이들과 함께 새로운 지역의 다양한 빵문화를 경험해 볼 수 있었습니다. 
+            현장의 생생한 열기와 분위기를 느끼고 싶다면, 아래 버튼을 눌러 보세요.
+          </p>
+          <a
+            class="poster-download"
+            href="https://www.1986.co.kr/20240908"
+            aria-label="빵빵런2024 in 대전 자세히 보기"
+            >자세히 보기</a
+          >
+        </div>
+      </div>
+
+            <div class="section-surface section-surface--poster">
+        <div class="poster-wrapper">
+          <a
+            class="poster-link"
+            href="https://www.1986.co.kr/20240414-2"
+            aria-label="빵빵런2024 자세히 보기"
+          >
+            <img
+              src="https://cdn.imweb.me/upload/S20200402f6a4097001dd3/739b6ea7f83fb.png"
+              alt="빵빵런 공식 포스터"
+            />
+          </a>
+        </div>
+        <div class="poster-caption">
+          <strong>빵빵런2024</strong>
+          <p>
+            빵둥이들도 마라토너! 달콤한 빵을 먹기 위해 달린다! 
+            4회차 개최를 맞은 빵빵런은 더욱 많은 빵둥이들과 함께 건강한 빵문화를 위해 달렸습니다.
+            올해는 기록칩이 제공되어 빵둥이들의 빵을 향한 발빠른 스피드를 가득 느낄 수 있었습니다.
+            현장의 생생한 열기와 분위기를 느끼고 싶다면, 아래 버튼을 눌러 보세요.
+          </p>
+          <a
+            class="poster-download"
+            href="https://www.1986.co.kr/20240414-2"
+            aria-label="빵빵런2024 자세히 보기"
+            >자세히 보기</a
+          >
+        </div>
+      </div>
+
+                  <div class="section-surface section-surface--poster">
+        <div class="poster-wrapper">
+          <a
+            class="poster-link"
+            href="https://www.1986.co.kr/166"
+            aria-label="빵빵런2023 자세히 보기"
+          >
+            <img
+              src="https://cdn.imweb.me/upload/S20200402f6a4097001dd3/8423becc525d6.png"
+              alt="빵빵런 공식 포스터"
+            />
+          </a>
+        </div>
+        <div class="poster-caption">
+          <strong>빵빵런2023</strong>
+          <p>
+            오프라인으로 돌아온 빵빵런2023! 올해는 빵둥이들이 모여 맛있는 빵을 먹기 위해 더 즐겁고, 더 신나게 달립니다.
+            현장의 생생한 열기와 분위기를 느끼고 싶다면, 아래 버튼을 눌러 보세요.
+          </p>
+          <a
+            class="poster-download"
+            href="https://www.1986.co.kr/166"
+            aria-label="빵빵런2023 자세히 보기"
+            >자세히 보기</a
+          >
+        </div>
+      </div>
+
+        <div class="section-surface section-surface--poster">
+        <div class="poster-wrapper">
+          <a
+            class="poster-link"
+            href="https://www.1986.co.kr/220514"
+            aria-label="빵빵런2022 자세히 보기"
+          >
+            <img
+              src="https://cdn.imweb.me/upload/S20200402f6a4097001dd3/30418be9dd28e.png"
+              alt="빵빵런 공식 포스터"
+            />
+          </a>
+        </div>
+        <div class="poster-caption">
+          <strong>빵빵런2022</strong>
+          <p>
+            빵을 먹기 위한 빵둥이들의 두번째 마라톤 '빵빵런2022'! 빵둥이들은 올해도 지치지 않고 더 건강하게,
+            더 맛있게 빵을 먹기 위해 달립니다. 
+            현장의 생생한 열기와 분위기를 느끼고 싶다면, 아래 버튼을 눌러 보세요.
+          </p>
+          <a
+            class="poster-download"
+            href="https://www.1986.co.kr/220514"
+            aria-label="빵빵런2022 자세히 보기"
+            >자세히 보기</a
+          >
+        </div>
+      </div>
+
+              <div class="section-surface section-surface--poster">
+        <div class="poster-wrapper">
+          <a
+            class="poster-link"
+            href="https://www.1986.co.kr/210926"
+            aria-label="빵빵런2021 자세히 보기"
+          >
+            <img
+              src="https://cdn.imweb.me/upload/S20200402f6a4097001dd3/f2a3dc302e1fc.png"
+              alt="빵빵런 공식 포스터"
+            />
+          </a>
+        </div>
+        <div class="poster-caption">
+          <strong>빵빵런2021</strong>
+          <p>
+            빵에 진심입니다만 살찌는 건 싫은 빵둥이들의 마라톤 '빵빵런'! 
+            맛있는 빵을 먹기 위해서라면 어디든 달려가는 빵둥이들이 건강한 빵문화를 만들기 위해 달리는 버추얼 빵라톤입니다.
+            현장의 생생한 열기와 분위기를 느끼고 싶다면, 아래 버튼을 눌러 보세요.
+          </p>
+          <a
+            class="poster-download"
+            href="https://www.1986.co.kr/210926"
+            aria-label="빵빵런2021 자세히 보기"
+            >자세히 보기</a
+          >
+        </div>
+      </div>
+
+      </section>
+
+      <section
+        id="coffee-bbang-run"
+        class="section"
+        data-progress="0.14"
+        style="--hero-image: url('https://cdn.imweb.me/upload/S20200402f6a4097001dd3/6aea10dc10d10.png'); --hero-text: #ffffff; --title-color: #f7f7f7; --notice-color: #000000; --card-accent: #79c9f1"
+      >
+        <div class="section-surface">
+          <div class="section-hero">
+            <div class="section-notice">
+              <span>Since 2025</span>
+              <span class="section-notice__count">02 / 08</span>
+            </div>
+            <div class="section-hero__body">
+              <h2 class="section-title">커피빵빵런</h2>
+              <a
+                class="section-hero__cta"
+                href="https://www.1986.co.kr/250601"
+                aria-label="커피빵빵런 자세히 보기"
+              >자세히 보기</a>
+            </div>
+          </div>
+          <div class="section-body">
+            <div class="section-copy">
+              <span class="tagline">City Fun Run</span>
+              <h3 class="section-heading">
+                커피는 살 안 쪄!<br />
+                살찌는 건 싫지만,<br />
+                빵은 먹고 싶어!
+              </h3>
+              <p class="section-description">
+                ‘커피 빵빵런’은 커피와 빵을 사랑하는 러너들을 위한 감성 러닝 축제입니다.
+                향긋한 커피 향과 따뜻한 빵 냄새 속에서 달리며, 일상의 피로를 날려보는 러닝 페스티벌입니다.
+                피니시 라인에서는 로컬 바리스타가 내린 커피로 힐링의 시간을 갖고, 참가비 일부는 지역 아동센터에 빵으로 기부됩니다.
+              </p>
+            </div>
+            <div class="grid">
+              <div class="card">
+                <strong>빵빵 커피존</strong>
+                <span>
+                  완주 후, 강릉 커피 맛집 사장님이 직접 내려주는 커피 한 잔과
+                  맛있는 빵으로 달콤한 휴식을 즐겨보세요. ☕🥐
+                </span>
+              </div>
+                 <div class="card">
+                <strong>베스트 빵빵드레서</strong>
+                <span>
+                  빵둥이들의 스타일 대결!
+                  가장 멋진 빵빵드레서에게는
+                  달콤하고 빵빵한 선물이 기다리고 있어요 🥐✨
+
+                </span>
+              </div>
+                 <div class="card">
+                <strong>포토존</strong>
+                <span>
+                  “달리고, 꾸미고, 먹고 오늘은 내가 주인공!”
+                  귀여운 소품과 나만의 빵빵패션으로
+                  완주의 순간을 가장 빵빵하게 즐겨보세요. 🎉
+                </span>
+              </div>
+                 <div class="card">
+                <strong>이벤트존</strong>
+                <span>
+                  “달렸다면, 이제 즐길 차례!”
+                  완주 후에도 계속되는 축제의 순간 ✨
+                  다양한 이벤트존이 빵둥이들을 기다리고 있어요! 🎈
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+                <div class="section-surface section-surface--poster">
+        <div class="poster-wrapper">
+          <a
+            class="poster-link"
+            href="https://www.1986.co.kr/250601"
+            aria-label="커피빵빵런2025 자세히 보기"
+          >
+            <img
+              src="https://cdn.imweb.me/upload/S20200402f6a4097001dd3/6aea10dc10d10.png"
+              alt="커피빵빵런 공식 포스터"
+            />
+          </a>
+        </div>
+        <div class="poster-caption">
+          <strong>커피빵빵런2025</strong>
+          <p>
+            빵을 따라 달리다 보니, 커피의 도시 강릉에 도착했습니다. <커피 빵빵런 in 강릉>은 커피와 빵을 사랑하는 러너들을 위한 러닝 축제입니다.
+            현장에는 로컬 카페 사장님들이 직접 내려주는 시원한 커피가 마련되었고, 참가자들은 소나무숲과 경포호수를 바라보며 한숨 돌리며 힐링의 시간을 보냈습니다.
+            현장의 생생한 열기와 분위기를 느끼고 싶다면, 아래 버튼을 눌러 보세요.
+          </p>
+          <a
+            class="poster-download"
+            href="https://www.1986.co.kr/250601"
+            aria-label="커피빵빵런2025 자세히 보기"
+            >자세히 보기</a
+          >
+        </div>
+      </div>
+
+      </section>
+
+      <section
+        id="bbang-trail-run"
+        class="section"
+        data-progress="0.28"
+        style="--hero-image: url('https://cdn.imweb.me/upload/S20200402f6a4097001dd3/94573d0b09bd0.png'); --hero-text: #f1edff; --title-color: #f7f7f7; --notice-color: rgba(255,255,255,0.95); --card-accent: #00ad6a"
+      >
+        <div class="section-surface">
+          <div class="section-hero">
+            <div class="section-notice">
+              <span>Since 2025</span>
+              <span class="section-notice__count">03 / 08</span>
+            </div>
+            <div class="section-hero__body">
+              <h2 class="section-title">빵트레일런</h2>
+              <a
+                class="section-hero__cta"
+                href="https://www.1986.co.kr/250614-0615"
+                aria-label="빵트레일런 자세히 보기"
+              >자세히 보기</a>
+            </div>
+          </div>
+          <div class="section-body">
+            <div class="section-copy">
+              <span class="tagline">Trail Adventure</span>
+              <h3 class="section-heading">
+                빵을 찾아서~!<br />
+                산 달리는 트레일런
+              </h3>
+              <p class="section-description">
+                ‘빵트레일런’은 건강한 빵 문화를 알리고, 트레일런의 대중화를 이끌기 위해 기획된 러닝 페스티벌입니다.
+                ‘빵빵런’의 취지를 이어 참가비 일부를 빵으로 전환해 강원 지역 아동복지센터에 따뜻한 마음과 함께 기부했습니다.
+                또한 고한구공탄시장과의 협업을 통해 지역 상생과 경제 활성화에도 힘쓰고 있습니다.
+              </p>
+            </div>
+            <div class="grid">
+              <div class="card">
+                <strong>CP</strong>
+                <span>
+                  CP1 브런치 → CP2 과자의 집 → CP3 아이스크림!🍦
+                  달리면서 즐기는 미식 코스,
+                  마음껏 먹고 달리는 ‘빵트레일런’ 🎉
+                </span>
+              </div>
+              <div class="card">
+                <strong>순위권 시상식</strong>
+                <span>
+                  달리며 먹다보니 완주까지,
+                  20K 코스를 대상으로 남,여 1위에게
+                  순위권 시상품을 드립니다. 🏅
+                </span>
+              </div>
+              <div class="card">
+                <strong>캠페인</strong>
+                <span>
+                  달리고, 나누고, 먹고
+                  ‘빵트레일런’은 빵빵런의 따뜻한 마음을 이어
+                  강원 지역 아동복지센터에 빵을 기부합니다. 🥖💛
+                </span>
+                  </div>
+              </div>
+          </div>
+        </div>
+
+        <div class="section-surface section-surface--poster">
+        <div class="poster-wrapper">
+          <a
+            class="poster-link"
+            href="https://www.1986.co.kr/250614-0615"
+            aria-label="빵트레일런2025 자세히 보기"
+          >
+            <img
+              src="https://cdn.imweb.me/upload/S20200402f6a4097001dd3/94573d0b09bd0.png"
+              alt="빵트레일런 공식 포스터"
+            />
+          </a>
+        </div>
+        <div class="poster-caption">
+          <strong>빵트레일런2025</strong>
+          <p>
+            <빵트레일런>은 건강한 빵 문화를 알리고, 트레일런의 대중화에 기여하기 위해 만들어진 대회입니다.
+            빵에 진심인 마라톤 <빵빵런>의 취지를 이어 참가비 일부를 빵으로 전환하여 
+            강원 지역 내 아동복지센터에 따뜻한 마음과 함께 기부했습니다.
+            현장의 생생한 열기와 분위기를 느끼고 싶다면, 아래 버튼을 눌러 보세요.
+          </p>
+          <a
+            class="poster-download"
+            href="https://www.1986.co.kr/250614-0615"
+            aria-label="빵트레일런2025 자세히 보기"
+            >자세히 보기</a
+          >
+        </div>
+      </div>
+
+      </section>
+
+      <section
+        id="ddangddang-run"
+        class="section"
+        data-progress="0.42"
+        style="--hero-image: url('https://cdn.imweb.me/upload/S20200402f6a4097001dd3/dec849ceae814.png'); --hero-text: #000000; --title-color: #f7f7f7; --notice-color: #000000; --card-accent: #ffe600"
+      >
+        <div class="section-surface">
+          <div class="section-hero">
+            <div class="section-notice">
+              <span>Since 2018</span>
+              <span class="section-notice__count">04 / 08</span>
+            </div>
+            <div class="section-hero__body">
+              <h2 class="section-title">댕댕런</h2>
+              <a
+                class="section-hero__cta"
+                href="https://www.1986.co.kr/165"
+                aria-label="댕댕런 자세히 보기"
+              >자세히 보기</a>
+            </div>
+          </div>
+          <div class="section-body">
+            <div class="section-copy">
+              <span class="tagline">Pet Fun Run</span>
+              <h3 class="section-heading">
+                댕댕이와 함께<br />
+                엔돌핀 폭발 개라톤
+              </h3>
+              <p class="section-description">
+                우리는 반려견과 함께 달리는 즐거움을 나누는 동시에,
+                그들의 삶을 더 나은 방향으로 바꾸기 위한 한 걸음을 내딛습니다.
+                매년 하나의 반려견 문제를 주제로 캠페인을 펼치며,
+                티켓 수익금의 일부는 그 변화를 위해 사용됩니다.
+                댕댕런은 참가자 1인당 1kg의 사료를 기부합니다.
+              </p>
+            </div>
+            <div class="grid">
+              <div class="card">
+                <strong>캠페인 (21,916kg 기부)</strong>
+                <span>
+                  ‘댕댕런’은 참가자 1인당 1kg의 사료를 유기견 보호센터에 기부하며,
+                  더 많은 유기견이 사랑받는 반려견으로 다시 태어날 수 있도록 함께합니다. 🐾
+                </span>
+              </div>
+                <div class="card">
+                <strong>강형욱 포토타임</strong>
+                <span>
+                  ‘개통령’ 강형욱과 함께하는 포토타임! 📸
+                  놓치지 말고 강형욱 훈련사와 함께하는 즐거운 순간을 만들어보세요.
+                </span>
+              </div>
+                 <div class="card">
+                <strong>개똥교환소</strong>
+                <span>
+                  개똥을 아무 데나 버리지 말아요! 💩
+                  개똥교환소에서 선물로 바꿔드립니다. 🎁
+
+                </span>
+              </div>
+                 <div class="card">
+                <strong>강형욱의 기다려 대회</strong>
+                <span>
+                  강형욱 훈련사의 한 마디에 시작되는
+                  강아지들의 숨 막히는 인내심 배틀!
+
+                  움직이면 탈락!
+                  세상에서 가장 침착한 강아지를 찾습니다.
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-surface section-surface--poster">
+        <div class="poster-wrapper">
+          <img
+            src="https://cdn.imweb.me/upload/S20200402f6a4097001dd3/dec849ceae814.png"
+            alt="댕댕런 공식 포스터"
+          />
+        </div>
+        <div class="poster-caption">
+          <strong>댕댕런2025</strong>
+          <p>
+            빵의 도시 대전에서 열린 댕댕런!! 빵도 먹고 눈치 없이 댕댕이들과 함께 달리는 댕댕이와의 러닝
+            매년 1가지 반려견 문제를 선정하여 티켓 수익금의 일부를 캠페인에 사용했습니다. 
+            현장의 생생한 열기와 분위기를 느끼고 싶다면, 아래 버튼을 눌러 보세요.
+          </p>
+          <a
+            class="poster-download"
+            href="#bbang-run"
+            aria-label="포스터 자세히 보기"
+            >자세히 보기</a
+          >
+        </div>
+      </div>
+
+              <div class="section-surface section-surface--poster">
+        <div class="poster-wrapper">
+          <a
+            class="poster-link"
+            href="https://www.1986.co.kr/165"
+            aria-label="댕댕런2023 자세히 보기"
+          >
+            <img
+              src="https://cdn.imweb.me/upload/S20200402f6a4097001dd3/b69cfef1e180c.png"
+              alt="댕댕런 공식 포스터"
+            />
+          </a>
+        </div>
+        <div class="poster-caption">
+          <strong>댕댕런2023</strong>
+          <p>
+            우리는 반려견과 함께 즐기는 행사를 통해 반려견 문제를 지속적으로 알리고 해결하려 합니다. 
+            매년 1가지 반려견 문제를 선정하여 티켓 수익금의 일부를 캠페인에 사용했습니다. 
+            현장의 생생한 열기와 분위기를 느끼고 싶다면, 아래 버튼을 눌러 보세요.
+          </p>
+          <a
+            class="poster-download"
+            href="https://www.1986.co.kr/165"
+            aria-label="댕댕런2023 자세히 보기"
+            >자세히 보기</a
+          >
+        </div>
+      </div>
+
+              <div class="section-surface section-surface--poster">
+        <div class="poster-wrapper">
+          <a
+            class="poster-link"
+            href="https://www.1986.co.kr/220924"
+            aria-label="댕댕런2022 자세히 보기"
+          >
+            <img
+              src="https://cdn.imweb.me/upload/S20200402f6a4097001dd3/e0fabb2fedf42.png"
+              alt="댕댕런 공식 포스터"
+            />
+          </a>
+        </div>
+        <div class="poster-caption">
+          <strong>댕댕런2022</strong>
+          <p>
+            우리는 반려견과 함께 즐기는 행사를 통해 반려견 문제를 지속적으로 알리고 해결하려 합니다. 
+            매년 1가지 반려견 문제를 선정하여 티켓 수익금의 일부를 캠페인에 사용했습니다. 
+            현장의 생생한 열기와 분위기를 느끼고 싶다면, 아래 버튼을 눌러 보세요.
+          </p>
+          <a
+            class="poster-download"
+            href="https://www.1986.co.kr/220924"
+            aria-label="댕댕런2022 자세히 보기"
+            >자세히 보기</a
+          >
+        </div>
+      </div>
+
+              <div class="section-surface section-surface--poster">
+        <div class="poster-wrapper">
+          <a
+            class="poster-link"
+            href="https://www.1986.co.kr/211016"
+            aria-label="댕댕런2021 with 가을 자세히 보기"
+          >
+            <img
+              src="https://cdn.imweb.me/upload/S20200402f6a4097001dd3/a947df433911f.png"
+              alt="댕댕런 공식 포스터"
+            />
+          </a>
+        </div>
+        <div class="poster-caption">
+          <strong>댕댕런2021 with 가을</strong>
+          <p>
+            우리는 반려견과 함께 즐기는 행사를 통해 반려견 문제를 지속적으로 알리고 해결하려 합니다. 
+            매년 1가지 반려견 문제를 선정하여 티켓 수익금의 일부를 캠페인에 사용했습니다. 
+            현장의 생생한 열기와 분위기를 느끼고 싶다면, 아래 버튼을 눌러 보세요.
+          </p>
+          <a
+            class="poster-download"
+            href="https://www.1986.co.kr/211016"
+            aria-label="댕댕런2021 with 가을 자세히 보기"
+            >자세히 보기</a
+          >
+        </div>
+      </div>
+
+              <div class="section-surface section-surface--poster">
+        <div class="poster-wrapper">
+          <a
+            class="poster-link"
+            href="https://www.1986.co.kr/210509"
+            aria-label="댕댕런2021 with 여름 자세히 보기"
+          >
+            <img
+              src="https://cdn.imweb.me/upload/S20200402f6a4097001dd3/16849d3e4773a.png"
+              alt="댕댕런 공식 포스터"
+            />
+          </a>
+        </div>
+        <div class="poster-caption">
+          <strong>댕댕런2021 with 여름</strong>
+          <p>
+            우리는 반려견과 함께 즐기는 행사를 통해 반려견 문제를 지속적으로 알리고 해결하려 합니다. 
+            매년 1가지 반려견 문제를 선정하여 티켓 수익금의 일부를 캠페인에 사용했습니다. 
+            현장의 생생한 열기와 분위기를 느끼고 싶다면, 아래 버튼을 눌러 보세요.
+          </p>
+          <a
+            class="poster-download"
+            href="https://www.1986.co.kr/210509"
+            aria-label="댕댕런2021 with 여름 자세히 보기"
+            >자세히 보기</a
+          >
+        </div>
+
+                    </div>
+              <div class="section-surface section-surface--poster">
+        <div class="poster-wrapper">
+          <a
+            class="poster-link"
+            href="https://www.1986.co.kr/190421"
+            aria-label="댕댕런2020 자세히 보기"
+          >
+            <img
+              src="https://cdn.imweb.me/upload/S20200402f6a4097001dd3/d04a2f8a52906.png"
+              alt="댕댕런 공식 포스터"
+            />
+          </a>
+        </div>
+        <div class="poster-caption">
+          <strong>댕댕런2020</strong>
+          <p>
+            <빵트레일런>은 건강한 빵 문화를 알리고, 트레일런의 대중화에 기여하기 위해 만들어진 대회입니다.
+            빵에 진심인 마라톤 <빵빵런>의 취지를 이어 참가비 일부를 빵으로 전환하여 
+            강원 지역 내 아동복지센터에 따뜻한 마음과 함께 기부했습니다.
+            현장의 생생한 열기와 분위기를 느끼고 싶다면, 아래 버튼을 눌러 보세요.
+          </p>
+          <a
+            class="poster-download"
+            href="https://www.1986.co.kr/190421"
+            aria-label="댕댕런2020 자세히 보기"
+            >자세히 보기</a
+          >
+        </div>
+      </div>
+
+      </div>
+              <div class="section-surface section-surface--poster">
+        <div class="poster-wrapper">
+          <a
+            class="poster-link"
+            href="https://www.1986.co.kr/190817"
+            aria-label="썸머댕댕런2019 in 경포 자세히 보기"
+          >
+            <img
+              src="https://cdn.imweb.me/upload/S20200402f6a4097001dd3/2a9e0a02be305.png"
+              alt="댕댕런 공식 포스터"
+            />
+          </a>
+        </div>
+        <div class="poster-caption">
+          <strong>썸머댕댕런2019 in 경포</strong>
+          <p>
+            <빵트레일런>은 건강한 빵 문화를 알리고, 트레일런의 대중화에 기여하기 위해 만들어진 대회입니다.
+            빵에 진심인 마라톤 <빵빵런>의 취지를 이어 참가비 일부를 빵으로 전환하여 
+            강원 지역 내 아동복지센터에 따뜻한 마음과 함께 기부했습니다.
+            현장의 생생한 열기와 분위기를 느끼고 싶다면, 아래 버튼을 눌러 보세요.
+          </p>
+          <a
+            class="poster-download"
+            href="https://www.1986.co.kr/190817"
+            aria-label="썸머댕댕런2019 in 경포 자세히 보기"
+            >자세히 보기</a
+          >
+        </div>
+      </div>
+
+            </div>
+              <div class="section-surface section-surface--poster">
+        <div class="poster-wrapper">
+          <a
+            class="poster-link"
+            href="https://www.1986.co.kr/180422"
+            aria-label="댕댕런2018 자세히 보기"
+          >
+            <img
+              src="https://cdn.imweb.me/upload/S20200402f6a4097001dd3/04961e8e73cde.png"
+              alt="댕댕런 공식 포스터"
+            />
+          </a>
+        </div>
+        <div class="poster-caption">
+          <strong>댕댕런2018</strong>
+          <p>
+            <빵트레일런>은 건강한 빵 문화를 알리고, 트레일런의 대중화에 기여하기 위해 만들어진 대회입니다.
+            빵에 진심인 마라톤 <빵빵런>의 취지를 이어 참가비 일부를 빵으로 전환하여 
+            강원 지역 내 아동복지센터에 따뜻한 마음과 함께 기부했습니다.
+            현장의 생생한 열기와 분위기를 느끼고 싶다면, 아래 버튼을 눌러 보세요.
+          </p>
+          <a
+            class="poster-download"
+            href="https://www.1986.co.kr/180422"
+            aria-label="댕댕런2018 자세히 보기"
+            >자세히 보기</a
+          >
+        </div>
+      </div>
+
+      </section>
+
+      <section
+        id="ddangddang-trekking"
+        class="section"
+        data-progress="0.57"
+        style="--hero-image: url('https://cdn.imweb.me/upload/S20200402f6a4097001dd3/842fe32782d8b.png'); --hero-text: #000000; --title-color: #f7f7f7; --notice-color: #000000; --card-accent: #b8d052"
+      >
+        <div class="section-surface">
+          <div class="section-hero">
+            <div class="section-notice">
+              <span>Since 2021</span>
+              <span class="section-notice__count">05 / 08</span>
+            </div>
+            <div class="section-hero__body">
+              <h2 class="section-title">댕댕트레킹</h2>
+              <a
+                class="section-hero__cta"
+                href="https://www.1986.co.kr/250517-0525"
+                aria-label="댕댕트레킹 자세히 보기"
+              >자세히 보기</a>
+            </div>
+          </div>
+          <div class="section-body">
+            <div class="section-copy">
+              <span class="tagline">Trail Adventure</span>
+              <h3 class="section-heading">
+                세상 모든 반려견이<br />
+                환영받는 지상댕댕천국
+              </h3>
+              <p class="section-description">
+                ‘댕댕트레킹’은 단순한 산책이 아닙니다.
+                함께 걷고, 쉬고, 바라보며 반려견과의 관계를 다시 느끼는 시간입니다.
+                우리는 이 축제를 통해 눈치 보지 않고 함께할 수 있는 세상을 꿈꿉니다.
+
+                매년 확장되는 댕댕트레킹은
+                성숙한 반려 문화를 전하고, 반려견에 대한 인식을 바꾸는 작지만 깊은 움직임입니다.
+                고한구공탄시장과의 협업을 통해 지역과 상생합니다.
+              </p>
+            </div>
+            <div class="grid">
+              <div class="card">
+                <strong>꼬질댕 선발대회</strong>
+                <span>
+                  꼬질해도 괜찮아, 귀여우면 다니까!
+                  원없이 놀고 온 반려견의 사진을 업로드해주세요.
+                  일자별 ‘꼬질댕’을 선정해 선물을 드립니다! 🎁
+                </span>
+              </div>
+                <div class="card">
+                <strong>강형욱 포토타임</strong>
+                <span>
+                  ‘개통령’ 강형욱과 함께하는 포토타임! 📸
+                  놓치지 말고 강형욱 훈련사와 함께하는 즐거운 순간을 만들어보세요.
+                </span>
+              </div>
+                 <div class="card">
+                <strong>개똥교환소</strong>
+                <span>
+                  개똥을 아무 데나 버리지 말아요! 💩
+                  개똥교환소에서 선물로 바꿔드립니다. 🎁
+                </span>
+              </div>
+                 <div class="card">
+                <strong>보물찾기 댕작전</strong>
+                <span>
+                  🏞️ 난이도 UP! 코스 한복판에서 펼쳐지는 보물찾기 대작전!
+                  숨겨진 보물을 찾아라!
+                  댕댕이를 위한 깜짝 선물이 당신을 기다리고 있어요. 🎉
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+         </div>
+              <div class="section-surface section-surface--poster">
+        <div class="poster-wrapper">
+          <a
+            class="poster-link"
+            href="https://www.1986.co.kr/250517-0525"
+            aria-label="댕댕트레킹2025 자세히 보기"
+          >
+            <img
+              src="https://cdn.imweb.me/upload/S20200402f6a4097001dd3/842fe32782d8b.png"
+              alt="댕댕트레킹 공식 포스터"
+            />
+          </a>
+        </div>
+        <div class="poster-caption">
+          <strong>댕댕트레킹2025</strong>
+          <p>
+            국내 최대 반려견 축제 댕댕트레킹은 반려견과 보호자가 눈치 보지 않고 함께 트레킹하고 쉬는 행복한 시간을 위해 만들어졌습니다. 
+            성숙한 반려 문화를 전하고, 반려견에 대한 인식을 함께 바꿔나가는 뜻깊은 자리로 점차 확장되고 있는 축제입니다. 
+            현장의 생생한 열기와 분위기를 느끼고 싶다면, 아래 버튼을 눌러 보세요.
+          </p>
+          <a
+            class="poster-download"
+            href="https://www.1986.co.kr/250517-0525"
+            aria-label="댕댕트레킹2025 자세히 보기"
+            >자세히 보기</a
+          >
+        </div>
+      </div>
+
+               </div>
+              <div class="section-surface section-surface--poster">
+        <div class="poster-wrapper">
+          <a
+            class="poster-link"
+            href="https://www.1986.co.kr/204"
+            aria-label="댕댕트레킹2024 자세히 보기"
+          >
+            <img
+              src="https://cdn.imweb.me/upload/S20200402f6a4097001dd3/74f64275f97d1.png"
+              alt="댕댕트레킹 공식 포스터"
+            />
+          </a>
+        </div>
+        <div class="poster-caption">
+          <strong>댕댕트레킹2024</strong>
+          <p>
+            국내 최대 반려견 축제인 '댕댕트레킹'은 눈치 보지 말고 반려견과 행복한 트레킹 & 숙박을 할 수 있도록 산과 리조트를 통째로 빌렸습니다.
+            현장의 생생한 열기와 분위기를 느끼고 싶다면, 아래 버튼을 눌러 보세요.
+          </p>
+          <a
+            class="poster-download"
+            href="https://www.1986.co.kr/204"
+            aria-label="댕댕트레킹2024 자세히 보기"
+            >자세히 보기</a
+          >
+        </div>
+      </div>
+
+               </div>
+              <div class="section-surface section-surface--poster">
+        <div class="poster-wrapper">
+          <a
+            class="poster-link"
+            href="https://www.1986.co.kr/167"
+            aria-label="댕댕트레킹2023 자세히 보기"
+          >
+            <img
+              src="https://cdn.imweb.me/upload/S20200402f6a4097001dd3/6b487d1a2aaa8.png"
+              alt="댕댕트레킹 공식 포스터"
+            />
+          </a>
+        </div>
+        <div class="poster-caption">
+          <strong>댕댕트레킹2023</strong>
+          <p>
+            사랑하는 댕댕이와 느긋하고 편안하게 즐기는 '댕댕트레킹2023'! 
+            올해는 가볍게 즐길 수 있는 3K 코스가 추가되어 3K, 4K, 6K 총 3가지 코스로 진행되었습니다. 
+            현장의 생생한 열기와 분위기를 느끼고 싶다면, 아래 버튼을 눌러 보세요.
+          </p>
+          <a
+            class="poster-download"
+            href="https://www.1986.co.kr/167"
+            aria-label="댕댕트레킹2023 자세히 보기"
+            >자세히 보기</a
+          >
+        </div>
+      </div>
+
+               </div>
+              <div class="section-surface section-surface--poster">
+        <div class="poster-wrapper">
+          <a
+            class="poster-link"
+            href="https://www.1986.co.kr/220521-22"
+            aria-label="댕댕트레킹2022 자세히 보기"
+          >
+            <img
+              src="https://cdn.imweb.me/upload/S20200402f6a4097001dd3/58f16aa8c7d4e.png"
+              alt="댕댕트레킹 공식 포스터"
+            />
+          </a>
+        </div>
+        <div class="poster-caption">
+          <strong>댕댕트레킹2022</strong>
+          <p>
+            프라이빗 반려견 트레킹코스를 따라 우리가족 모두 함께 떠나는 ‘댕댕트레킹2022’! 
+            트레킹은 일반레이스 4k, 6k 코스와 경쟁레이스 10k코스로 진행되었습니다. 
+            현장의 생생한 열기와 분위기를 느끼고 싶다면, 아래 버튼을 눌러 보세요.
+          </p>
+          <a
+            class="poster-download"
+            href="https://www.1986.co.kr/220521-22"
+            aria-label="댕댕트레킹2022 자세히 보기"
+            >자세히 보기</a
+          >
+        </div>
+      </div>
+
+               </div>
+              <div class="section-surface section-surface--poster">
+        <div class="poster-wrapper">
+          <a
+            class="poster-link"
+            href="https://www.1986.co.kr/211030"
+            aria-label="댕댕트레킹2021 자세히 보기"
+          >
+            <img
+              src="https://cdn.imweb.me/upload/S20200402f6a4097001dd3/f45eb42d9c6fd.png"
+              alt="댕댕트레킹 공식 포스터"
+            />
+          </a>
+        </div>
+        <div class="poster-caption">
+          <strong>댕댕트레킹2021</strong>
+          <p>
+            눈치보지 마세요! 댕댕이 전용 숲속에서 내 사랑 댕댕이와 함께 즐기는 댕댕트레킹! 
+            댕댕트레킹은 정해진 시간 내 코스를 선택하는 트레킹으로 진행되었습니다. 
+            현장의 생생한 열기와 분위기를 느끼고 싶다면, 아래 버튼을 눌러 보세요.
+          </p>
+          <a
+            class="poster-download"
+            href="https://www.1986.co.kr/211030"
+            aria-label="댕댕트레킹2021 자세히 보기"
+            >자세히 보기</a
+          >
+        </div>
+      </div>
+
+      </section>
+
+      <section
+        id="seoul-life-marathon"
+        class="section"
+        data-progress="0.71"
+        style="--hero-image: url('https://cdn.imweb.me/upload/S20200402f6a4097001dd3/f14bef9ea9051.png'); --hero-text: #000000; --title-color: #f7f7f7; --notice-color: #000000; --card-accent: #ef5f17"
+      >
+        <div class="section-surface">
+          <div class="section-hero">
+            <div class="section-notice">
+              <span>Since 2023</span>
+              <span class="section-notice__count">06 / 08</span>
+            </div>
+            <div class="section-hero__body">
+              <h2 class="section-title">서울라이프마라톤</h2>
+              <a
+                class="section-hero__cta"
+                href="https://www.1986.co.kr/224"
+                aria-label="서울라이프마라톤 자세히 보기"
+              >자세히 보기</a>
+            </div>
+          </div>
+          <div class="section-body">
+            <div class="section-copy">
+              <span class="tagline">Seoul Run</span>
+              <h3 class="section-heading">
+                전 세대가 함께<br />
+                경쟁하고 즐기는
+              </h3>
+              <p class="section-description">
+                ‘서울 라이프마라톤’은
+                20대부터 60대까지 모든 세대가 함께 달리고 즐기는 통합형 마라톤입니다.
+                세대 간의 벽을 허물고, 경쟁 속에서도 웃음과 건강을 나누는
+                새로운 러닝 문화의 장을 만들어가고 있습니다.
+
+                ‘함께 즐겁게 경쟁하자’는 취지로 시작된 라이프마라톤은
+                앞으로도 전 세대가 함께 공감하고 즐길 수 있는 건강한 러닝문화를 이어가겠습니다.
+              </p>
+            </div>
+            <div class="grid">
+              <div class="card">
+                <strong>세대별 순위권 시상식</strong>
+                <span>
+                  🏃‍♀️ 세대를 넘어, 모두가 주인공!
+                  20대부터 60대까지 나이별 순위권 시상식 🎉
+                  모든 세대가 우승할 수 있는 특별한 무대가 열립니다.
+                </span>
+              </div>
+                <div class="card">
+                <strong>국수집</strong>
+                <span>
+                  차가운 날, 달리고 난 뒤 식은 몸을 녹여줄 한 그릇의 따뜻한 잔치국수! 🍜
+                  완주 후 참가자분들께 따뜻한 국수 한 그릇을 제공합니다.
+                </span>
+              </div>
+                 <div class="card">
+                <strong>포토존</strong>
+                <span>
+                  🏁 완주의 순간을 사진으로 남기세요!
+                  서울 라이프마라톤의 포토존과 피니시 게이트,
+                  당신의 땀과 웃음이 가장 빛나는 곳입니다. ✨
+                </span>
+              </div>
+                 <div class="card">
+                <strong>기록칩</strong>
+                <span>
+                  기록칩을 통해 더 정확한 나의 기록을 남겨보세요! ⏱️
+                  완주자에게는 온라인 인증서가 함께 제공됩니다. 📄
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+                       </div>
+              <div class="section-surface section-surface--poster">
+        <div class="poster-wrapper">
+          <a
+            class="poster-link"
+            href="https://www.1986.co.kr/224"
+            aria-label="서울 라이프마라톤2024 자세히 보기"
+          >
+            <img
+              src="https://cdn.imweb.me/upload/S20200402f6a4097001dd3/e7537fee1309c.png"
+              alt="서울라이프마라톤 공식 포스터"
+            />
+          </a>
+        </div>
+        <div class="poster-caption">
+          <strong>서울 라이프마라톤2024</strong>
+          <p>
+            서울 라이프마라톤은 전 세대가 함께 경쟁하고 즐기는 마라톤입니다. 20대부터 60대까지 다양한 참가자들이 함께한 대회로, 모든 세대가 어우러져 즐겁고 건강하게 경쟁할 수 있는 기회를 제공합니다. 
+            모든 세대가 어우러져 즐겁고 건강하게 경쟁하자는 취지로 시작된 라이프마라톤, 앞으로도 전 세대가 함께 즐길 수 있는 건강한 러닝문화를 만들어가겠습니다.
+            현장의 생생한 열기와 분위기를 느끼고 싶다면, 아래 버튼을 눌러 보세요.
+          </p>
+          <a
+            class="poster-download"
+            href="https://www.1986.co.kr/224"
+            aria-label="서울 라이프마라톤2024 자세히 보기"
+            >자세히 보기</a
+          >
+        </div>
+      </div>
+
+                     </div>
+              <div class="section-surface section-surface--poster">
+        <div class="poster-wrapper">
+          <a
+            class="poster-link"
+            href="https://www.1986.co.kr/169"
+            aria-label="서울 라이프마라톤2023 자세히 보기"
+          >
+            <img
+              src="https://cdn.imweb.me/upload/S20200402f6a4097001dd3/e3035c128c730.png"
+              alt="사울라이프마라톤 공식 포스터"
+            />
+          </a>
+        </div>
+        <div class="poster-caption">
+          <strong>서울 라이프마라톤2023</strong>
+          <p>
+            서울 라이프마라톤은 전 세대가 함께 경쟁하고 즐기는 마라톤입니다. 
+            마라톤 참가자의 범위가 커짐에 따라 모든 세대가 함께 어우러지고 세대별로 즐겁고 건강하게 경쟁하자는 취지로 시작되었습니다. 
+            현장의 생생한 열기와 분위기를 느끼고 싶다면, 아래 버튼을 눌러 보세요.
+          </p>
+          <a
+            class="poster-download"
+            href="https://www.1986.co.kr/169"
+            aria-label="서울 라이프마라톤2023 자세히 보기"
+            >자세히 보기</a
+          >
+        </div>
+      </div>
+
+      </section>
+
+      <section
+        id="ggwaja-run"
+        class="section"
+        data-progress="0.85"
+        style="--hero-image: url('https://cdn.imweb.me/upload/S20200402f6a4097001dd3/0a30cffe53002.png'); --hero-text: #e8f1ff; --title-color: #f7f7f7; --notice-color: rgba(255,255,255,0.95); --card-accent: #e284b0"
+      >
+        <div class="section-surface">
+          <div class="section-hero">
+            <div class="section-notice">
+              <span>Since 2025</span>
+              <span class="section-notice__count">07 / 08</span>
+            </div>
+            <div class="section-hero__body">
+              <h2 class="section-title">꽈자런</h2>
+              <a
+                class="section-hero__cta"
+                href="#ggwaja-run"
+                aria-label="꽈자런 자세히 보기"
+              >자세히 보기</a>
+            </div>
+          </div>
+          <div class="section-body">
+            <div class="section-copy">
+              <span class="tagline">City Fun Run</span>
+              <h3 class="section-heading">
+                디저트를 사랑하는 <br />
+                사람들의 축제!
+              </h3>
+              <p class="section-description">
+                ‘꽈자런’은
+                과자의 달콤함과 마라톤 완주의 짜릿함을 동시에 즐길 수 있는 라이프스타일 러닝 페스티벌입니다.
+
+                달리기를 통해 칼로리를 소비하고,
+                그만큼 달콤한 보상을 누릴 수 있는 건강한 디저트 축제로,
+                참가자들에게 유쾌한 경험과 성취감을 선사합니다.
+
+                또한 천안 지역의 대표 디저트와 호두과자를 소개하며,
+                지역 상생과 경제 활성화에도 기여하고 있습니다.
+              </p>
+            </div>
+            <div class="grid">
+              <div class="card">
+                <strong>캠페인</strong>
+                <span>
+                  〈꽈자런 2025〉는 참가비의 일부로 과자를 구매하여,
+                  천안 지역 소외계층 아동들에게 ‘크리스마스 과자 선물상자’를 기부합니다.
+                  함께해주신 모든 분들께 진심으로 감사드립니다. 🎄🍪
+                </span>
+              </div>
+                 <div class="card">
+                <strong>기록칩</strong>
+                <span>
+                  기록칩을 통해 더 정확한 나의 기록을 남겨보세요! ⏱️
+                  완주자에게는 온라인 인증서가 함께 제공됩니다. 📄
+                </span>
+              </div>
+                 <div class="card">
+                <strong>포토존</strong>
+                <span>
+                  “달리고, 꾸미고, 먹고 오늘은 내가 주인공!”
+                  귀여운 소품과 나만의 빵빵패션으로
+                  완주의 순간을 가장 빵빵하게 즐겨보세요. 🎉
+                </span>
+              </div>
+                 <div class="card">
+                <strong>이벤트존</strong>
+                <span>
+                  “달렸다면, 이제 즐길 차례!”
+                  완주 후에도 계속되는 축제의 순간 ✨
+                  다양한 이벤트존이 빵둥이들을 기다리고 있어요! 🎈
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        </div>
+        <div class="section-surface section-surface--poster">
+        <div class="poster-wrapper">
+          <img
+            src="https://cdn.imweb.me/upload/S20200402f6a4097001dd3/0a30cffe53002.png"
+            alt="꽈자런 공식 포스터"
+          />
+        </div>
+        <div class="poster-caption">
+          <strong>꽈자런2025</strong>
+          <p>
+            ‘꽈자런’은 과자의 달콤함과 마라톤 완주의 짜릿함을 동시에 즐길 수 있는 라이프스타일 러닝 페스티벌입니다. 
+            달리기를 통해 칼로리를 소비하고, 그만큼 달콤한 보상을 누릴 수 있는 건강한 디저트 축제로, 참가자들에게 유쾌한 경험과 성취감을 선사합니다. 
+            현장의 생생한 열기와 분위기를 느끼고 싶다면, 아래 버튼을 눌러 보세요.
+          </p>
+          <a
+            class="poster-download"
+            href="#bbang-run"
+            aria-label="포스터 자세히 보기"
+            >자세히 보기</a
+          >
+        </div>
+      </div>
+      
+      </section>
+
+      <section
+        id="dust-school"
+        class="section"
+        data-progress="1"
+        style="--hero-image: url('https://cdn.imweb.me/upload/S20200402f6a4097001dd3/4f5161aa666e8.png'); --hero-text: #ffffff; --title-color: #f7f7f7; --notice-color: rgba(255,255,255,0.95); --card-accent: #000000"
+      >
+        <div class="section-surface">
+          <div class="section-hero">
+            <div class="section-notice">
+              <span>Since 2023</span>
+              <span class="section-notice__count">08 / 08</span>
+            </div>
+            <div class="section-hero__body">
+              <h2 class="section-title">먼지학교</h2>
+              <a
+                class="section-hero__cta"
+                href="https://www.1986.co.kr/250216"
+                aria-label="먼지학교 자세히 보기"
+              >자세히 보기</a>
+            </div>
+          </div>
+          <div class="section-body">
+            <div class="section-copy">
+              <span class="tagline">CPlanner School</span>
+              <h3 class="section-heading">
+                쓸모 없음에서 <br />
+                쓸모를 발견하는 <br />
+                기획자를 위한 강의
+              </h3>
+              <p class="section-description">
+                공기 중을 떠도는 작은 먼지,
+                그 초라한 존재도 빛을 받으면 별이 됩니다.
+
+                ‘먼지학교’는 그 철학에서 출발했습니다.
+                세상에 ‘쓸모없다’ 여겨지는 아이디어와 사람들에게
+                다시 빛을 비춰주는 곳.
+
+                문화 기획자, 디지털 기획자, 디자이너, 카피라이터 —
+                네 명의 현직 전문가가 하루 다섯 시간 동안
+                릴레이로 전한 그들의 실무와 철학은
+                기획의 새로운 가능성을 밝혔습니다.
+              </p>
+            </div>
+            <div class="grid">
+          <div class="card">
+                <strong>쓸모 없음의 쓸모</strong>
+                <span>
+                  ‘먼지학교’는 쓸모없음 속에서 쓸모를 발견하는 기획자들의 학교입니다.
+                  남들이 지나치는 것 속에서
+                  새로운 아이디어의 씨앗을 찾아내는 법을 배웁니다. 💡
+                </span>
+              </div>
+                 <div class="card">
+                <strong>After Party</strong>
+                <span>
+                  관심사가 같은 사람들과 이야기를 나눌 수 있도록,
+                  강의 후 인근에서 소소한 뒷풀이가 진행됩니다. ☕🍻
+                </span>
+              </div>
+                 <div class="card">
+                <strong>기획 실전 (팀 프로그램)</strong>
+                <span>
+                  혼자 떠올린 생각이, 함께할 때 현실이 됩니다.
+                  팀을 구성해 각자의 프로젝트를 정리하고,
+                  서로의 아이디어를 구체화해갑니다. 🌱✨
+                </span>
+              </div>
+                 <div class="card">
+                <strong>문화로 돈 버는 방법</strong>
+                <span>
+                  ‘문화로 돈 버는 방법’
+                  시장 규모와 타깃 설정, 그리고 ‘Why Not’ 정신을 배우는 시간입니다. 💼
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+                </div>
+        <div class="section-surface section-surface--poster">
+        <div class="poster-wrapper">
+          <a
+            class="poster-link"
+            href="https://www.1986.co.kr/250216"
+            aria-label="먼지학교 프라이빗2025 자세히 보기"
+          >
+            <img
+              src="https://cdn.imweb.me/upload/S20200402f6a4097001dd3/4f5161aa666e8.png"
+              alt="먼지학교 공식 포스터"
+            />
+          </a>
+        </div>
+        <div class="poster-caption">
+          <strong>먼지학교 프라이빗2025</strong>
+          <p>
+            먼지학교는 문화기획자를 위한 실전 코칭과 네트워킹이 함께하는 강의입니다.
+            평범한 아이디어 속에서 특별함을 만들어내는 기획. 쓸모없음의 쓸모를 발견해 반짝이는 별로 만들어내는 방법, 먼지학교에서 배울 수 있습니다.
+            현장의 생생한 열기와 분위기를 느끼고 싶다면, 아래 버튼을 눌러 보세요.
+          </p>
+          <a
+            class="poster-download"
+            href="https://www.1986.co.kr/250216"
+            aria-label="먼지학교 프라이빗2025 자세히 보기"
+            >자세히 보기</a
+          >
+        </div>
+      </div>
+
+                      </div>
+        <div class="section-surface section-surface--poster">
+        <div class="poster-wrapper">
+          <a
+            class="poster-link"
+            href="https://www.1986.co.kr/195"
+            aria-label="먼지학교 프라이빗2 자세히 보기"
+          >
+            <img
+              src="https://cdn.imweb.me/upload/S20200402f6a4097001dd3/4f5161aa666e8.png"
+              alt="먼지학교 공식 포스터"
+            />
+          </a>
+        </div>
+        <div class="poster-caption">
+          <strong>먼지학교 프라이빗2</strong>
+          <p>
+            공기 중에 떠다니는 초라하고 작은 먼지도 햇빛을 받으면 누구보다 빛나는 별이 될 수 있듯, 
+            쓸모 없음에서 쓸모를 발견할 수 있는 기획자를 위한 강의 '먼지학교 프라이빗2'가 진행되었습니다. 
+            하루 4시간, 20명 한정으로 문화, 공연, 축제, 이벤트 기획자를 위한 코칭 강의와 에프터파티를 진행하였습니다. 
+            현장의 생생한 열기와 분위기를 느끼고 싶다면, 아래 버튼을 눌러 보세요.
+          </p>
+          <a
+            class="poster-download"
+            href="https://www.1986.co.kr/195"
+            aria-label="먼지학교 프라이빗2 자세히 보기"
+            >자세히 보기</a
+          >
+        </div>
+      </div>
+
+                      </div>
+        <div class="section-surface section-surface--poster">
+        <div class="poster-wrapper">
+          <a
+            class="poster-link"
+            href="https://www.1986.co.kr/170"
+            aria-label="먼지학교 프라이빗1 자세히 보기"
+          >
+            <img
+              src="https://cdn.imweb.me/upload/S20200402f6a4097001dd3/4f5161aa666e8.png"
+              alt="먼지학교 공식 포스터"
+            />
+          </a>
+        </div>
+        <div class="poster-caption">
+          <strong>먼지학교 프라이빗1</strong>
+          <p>
+            공기 중에 떠다니는 초라하고 작은 먼지도 햇빛을 받으면 누구보다 빛나는 별이 될 수 있듯, 
+            쓸모 없음에서 쓸모를 발견할 수 있는 기획자를 위한 강의 '먼지학교'가 '먼지학교 프라이빗'으로 돌아왔습니다. 
+            '먼지학교 프라이빗'에서는 하루 4시간, 20명 한정으로 문화, 공연, 축제, 이벤트 기획자를 위한 코칭 강의를 진행하였습니다.
+            현장의 생생한 열기와 분위기를 느끼고 싶다면, 아래 버튼을 눌러 보세요.
+          </p>
+          <a
+            class="poster-download"
+            href="https://www.1986.co.kr/170"
+            aria-label="먼지학교 프라이빗1 자세히 보기"
+            >자세히 보기</a
+          >
+        </div>
+      </div>
+
+                </div>
+        <div class="section-surface section-surface--poster">
+        <div class="poster-wrapper">
+          <a
+            class="poster-link"
+            href="https://www.1986.co.kr/230205"
+            aria-label="먼지학교 자세히 보기"
+          >
+            <img
+              src="https://cdn.imweb.me/upload/S20200402f6a4097001dd3/4f5161aa666e8.png"
+              alt="먼지학교 공식 포스터"
+            />
+          </a>
+        </div>
+        <div class="poster-caption">
+          <strong>먼지학교</strong>
+          <p>
+            공기 중에 떠다니는 초라하고 작은 먼지도 햇빛을 받으면 누구보다 빛나는 별이 될 수 있듯, 
+            '먼지학교'에서는 쓸모 없음에서 쓸모를 발견할 수 있는 기획자를 위한 강의를 진행하였습니다. 
+            문화 기획자, 디지털 기획자, 디자이너, 카피라이터까지. 총 4명의 현직자가  하루 5시간 동안 릴레이식 강의를 진행하였습니다.
+            현장의 생생한 열기와 분위기를 느끼고 싶다면, 아래 버튼을 눌러 보세요.
+          </p>
+          <a
+            class="poster-download"
+            href="https://www.1986.co.kr/230205"
+            aria-label="먼지학교 자세히 보기"
+            >자세히 보기</a
+          >
+        </div>
+      </div>
+
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="logo-column">
+        <div class="sm-ent-logo">
+          <img
+            src="https://cdn.imweb.me/upload/S20200402f6a4097001dd3/591217a32399c.png"
+            alt="1986production Logo"
+          />
+        </div>
+        <div class="social-links">
+          <a
+            href="https://www.instagram.com/1986production/"
+            class="instagram-button"
+            target="_blank"
+            rel="noopener noreferrer"
+          ></a>
+          <a
+            href="https://www.instagram.com/dangdangfestival/"
+            class="댕댕페스티벌-instagram-button"
+            target="_blank"
+            rel="noopener noreferrer"
+          ></a>
+          <a
+            href="https://www.instagram.com/bbangbbangrun/"
+            class="빵빵런-instagram-button"
+            target="_blank"
+            rel="noopener noreferrer"
+          ></a>
+          <a
+            href="https://www.instagram.com/seoullifemarathon/"
+            class="라이프마라톤-instagram-button"
+            target="_blank"
+            rel="noopener noreferrer"
+          ></a>
+          <a
+            href="https://blog.naver.com/1986production"
+            class="naver-blog-button"
+            target="_blank"
+            rel="noopener noreferrer"
+          ></a>
+        </div>
+      </div>
+      <div class="menu-column">
+        <div class="footer-menu">
+          <ul id="menu-footer-menu" class="menu">
+            <li class="menu-item menu-item-has-children">
+              <a href="https://www.1986.co.kr/About">1986 ABOUT</a>
+              <ul class="sub-menu">
+                <li><a href="https://1986.imweb.me/252?preview_mode=1">회사 위치</a></li>
+                <li>
+                  <a href="https://1986.imweb.me/?preview_mode=1&modal_menu=m202312121200775a0ce8d"
+                    >비즈니스 문의</a
+                  >
+                </li>
+                <li><a href="mailto:1986@1986.co.kr">Send Email</a></li>
+              </ul>
+            </li>
+            <li><a href="https://www.1986.co.kr/Original">OUR WORK</a></li>
+          </ul>
+        </div>
+        <a href="https://www.1986.co.kr/236" class="privacy-link">APPLY</a>
+        <div class="copyright">
+          <span>ⓒ 2025 1986production. All Rights Reserved.</span>
+        </div>
+      </div>
+    </footer>
+
+    <script defer src="../헤더/header.js"></script>
+    <script src="script.js" defer></script>
+    <script>
+      (function (d) {
+        var config = {
+            kitId: "yqm6tla",
+            scriptTimeout: 3000,
+            async: true,
+          },
+          h = d.documentElement,
+          t = setTimeout(function () {
+            h.className =
+              h.className.replace(/\bwf-loading\b/g, "") + " wf-inactive";
+          }, config.scriptTimeout),
+          tk = d.createElement("script"),
+          f = false,
+          s = d.getElementsByTagName("script")[0],
+          a;
+        h.className += " wf-loading";
+        tk.src = "https://use.typekit.net/" + config.kitId + ".js";
+        tk.async = true;
+        tk.onload = tk.onreadystatechange = function () {
+          a = this.readyState;
+          if (f || (a && a != "complete" && a != "loaded")) return;
+          f = true;
+          clearTimeout(t);
+          try {
+            Typekit.load(config);
+          } catch (e) {}
+        };
+        s.parentNode.insertBefore(tk, s);
+      })(document);
+    </script>
+  </body>
+</html>

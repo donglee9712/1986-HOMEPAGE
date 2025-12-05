@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hamburger Navigation Demo</title>
+    <link rel="stylesheet" href="./11.css" />
+  </head>
+  <body>
+    <header class="hamburger-demo">
+      <div class="hamburger-demo__intro">
+        <p>새로운 모바일 내비게이션 UI를 테스트할 수 있는 독립 예시입니다.</p>
+        <p>
+          아래 컴포넌트는 <code>data-hamburger-nav</code> 어트리뷰트만 있으면 다른 페이지에도
+          그대로 삽입할 수 있습니다.
+        </p>
+      </div>
+
+      <div class="hamburger-nav" data-hamburger-nav>
+        <a class="hamburger-nav__logo" href="#">
+          <img
+            src="https://cdn.imweb.me/upload/S20200402f6a4097001dd3/e5128b817c05c.png"
+            alt="1986 Production"
+          />
+        </a>
+
+        <button
+          class="hamburger-toggle"
+          type="button"
+          aria-label="메뉴 열기"
+          aria-expanded="false"
+          aria-controls="hamburgerPanel"
+          data-hamburger-toggle
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav class="hamburger-panel" id="hamburgerPanel" data-hamburger-panel>
+          <ul>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#original">ORIGINAL PROJECTS</a></li>
+            <li><a href="#work">WORK</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+          </ul>
+        </nav>
+
+        <div class="hamburger-backdrop" data-hamburger-backdrop></div>
+      </div>
+    </header>
+
+    <main class="hamburger-demo__content">
+      <section>
+        <h2 id="about">About</h2>
+        <p>
+          이 영역은 단순히 내비게이션 이동을 시험하기 위한 더미 콘텐츠입니다. 브레이크포인트에
+          따라 메뉴가 자동으로 햄버거 모드로 전환됩니다.
+        </p>
+      </section>
+      <section>
+        <h2 id="original">Original Projects</h2>
+        <p>
+          실제 프로젝트에서는 <code>.hamburger-nav</code> 블록을 원하는 위치에 붙여넣고
+          메뉴만 수정하면 됩니다.
+        </p>
+      </section>
+      <section>
+        <h2 id="work">Work</h2>
+        <p>JS 파일은 자동으로 토글 이벤트와 포커스, Escape 키를 처리합니다.</p>
+      </section>
+      <section>
+        <h2 id="contact">Contact</h2>
+        <p>usage.js 파일에 간단한 사용 예시가 포함되어 있습니다.</p>
+      </section>
+    </main>
+
+    <script src="./code.js" defer></script>
+    <script src="./usage.js" defer></script>
+  </body>
+</html>

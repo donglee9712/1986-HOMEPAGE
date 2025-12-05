@@ -1,0 +1,223 @@
+:root {
+  color-scheme: dark;
+  --hm-bg: #07070a;
+  --hm-panel: #11121f;
+  --hm-border: rgba(255, 255, 255, 0.08);
+  --hm-text: #f7f7fb;
+  --hm-accent: #c7ff41;
+  --hm-muted: rgba(255, 255, 255, 0.6);
+  --hm-radius: 28px;
+  --hm-transition: 0.28s ease;
+  --hm-nav-height: 62px;
+  font-family: "Pretendard", "Noto Sans KR", -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #1f1f49, #050508 60%);
+  color: var(--hm-text);
+  transition: filter var(--hm-transition);
+}
+
+body.hamburger-scroll-lock {
+  overflow: hidden;
+}
+
+.hamburger-demo {
+  padding: clamp(24px, 6vw, 60px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(24px, 4vw, 40px);
+}
+
+.hamburger-demo__intro {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--hm-border);
+  border-radius: var(--hm-radius);
+  padding: clamp(16px, 4vw, 24px);
+  line-height: 1.6;
+  color: var(--hm-muted);
+}
+
+.hamburger-demo__content {
+  padding: clamp(24px, 6vw, 64px);
+  display: grid;
+  gap: 60px;
+  max-width: 960px;
+}
+
+.hamburger-demo__content section h2 {
+  margin-bottom: 12px;
+  letter-spacing: 0.08em;
+}
+
+.hamburger-nav {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 16px;
+  border-radius: var(--hm-radius);
+  border: 1px solid var(--hm-border);
+  background: rgba(6, 6, 12, 0.7);
+  backdrop-filter: blur(18px);
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.45);
+  isolation: isolate;
+}
+
+.hamburger-nav__logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 8px 0;
+}
+
+.hamburger-nav__logo img {
+  height: 36px;
+}
+
+.hamburger-toggle {
+  background: none;
+  border: none;
+  color: #000000;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  position: relative;
+}
+
+.hamburger-toggle span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  width: 26px;
+  height: 2px;
+  border-radius: 999px;
+  background: currentColor;
+  transition: transform 0.3s ease;
+}
+
+.hamburger-toggle span:nth-child(1) {
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.hamburger-toggle span:nth-child(2) {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+
+.hamburger-toggle span:nth-child(3) {
+  display: none;
+}
+
+.hamburger-nav.is-open .hamburger-toggle span:nth-child(1) {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.hamburger-nav.is-open .hamburger-toggle span:nth-child(2) {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+
+.hamburger-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(320px, 82vw);
+  padding: 100px 28px 32px;
+  background: var(--hm-panel);
+  border-left: 1px solid var(--hm-border);
+  transform: translateX(100%);
+  transition: transform var(--hm-transition);
+  z-index: 90;
+}
+
+.hamburger-panel ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.hamburger-panel a {
+  display: block;
+  padding: 16px 14px;
+  border-radius: 18px;
+  text-decoration: none;
+  color: var(--hm-text);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  transition: background var(--hm-transition), color var(--hm-transition);
+  border: 1px solid transparent;
+}
+
+.hamburger-panel a:hover,
+.hamburger-panel a:focus-visible {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.18);
+  outline: none;
+}
+
+.hamburger-nav.is-open .hamburger-panel {
+  transform: translateX(0);
+}
+
+.hamburger-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(3, 3, 6, 0.7);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--hm-transition);
+  z-index: 80;
+}
+
+.hamburger-nav.is-open .hamburger-backdrop {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+@media (min-width: 900px) {
+  .hamburger-toggle,
+  .hamburger-backdrop {
+    display: none;
+  }
+
+  .hamburger-panel {
+    position: static;
+    transform: none !important;
+    width: auto;
+    padding: 0;
+    background: transparent;
+    border: none;
+  }
+
+  .hamburger-panel ul {
+    flex-direction: row;
+    gap: 16px;
+  }
+
+  .hamburger-panel a {
+    padding: 10px 18px;
+    border-radius: 999px;
+    text-transform: uppercase;
+  }
+
+  .hamburger-nav {
+    padding: 18px 28px;
+  }
+}

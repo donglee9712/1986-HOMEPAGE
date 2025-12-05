@@ -1,0 +1,239 @@
+.menu-wrap {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.menu__item {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.menu.menu--ready .menu__item {
+  animation: menu-fade-in 1s ease forwards;
+  animation-delay: var(--item-delay, 0s);
+}
+
+.menu__item-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  position: relative;
+  cursor: pointer;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+  font-weight: 600;
+  color: #111;
+  font-size: clamp(2.5rem, 5vw, 5.5rem);
+  padding: 0;
+  width: 100%;
+  border: none;
+  background: transparent;
+}
+
+.menu__item-link:hover {
+  color: #060010;
+}
+
+.menu__item-link:focus-visible {
+  outline: 2px solid #060010;
+  outline-offset: 4px;
+}
+
+.menu__item-link:focus:not(:focus-visible) {
+  color: #111;
+}
+
+.marquee {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  background: #fff;
+  transform: translate3d(0, 101%, 0);
+  transition: transform 0.6s ease-expo;
+}
+
+.marquee__inner-wrap {
+  height: 100%;
+  width: 200%;
+  display: flex;
+  transform: translateX(0);
+}
+
+.marquee__inner {
+  display: flex;
+  align-items: center;
+  position: relative;
+  height: 100%;
+  width: 200%;
+  will-change: transform;
+  animation: marquee 15s linear infinite;
+}
+
+.marquee span {
+  color: #060010;
+  white-space: nowrap;
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: clamp(2.5rem, 5vw, 5.5rem);
+  line-height: 1.2;
+  padding: 0 1vw;
+  display: flex;
+  align-items: center;
+}
+
+.marquee__img {
+  width: clamp(140px, 18vw, 320px);
+  height: clamp(5.5rem, 5vw, 8.5rem);
+  margin: 0 2vw;
+  padding: 0;
+  border-radius: 999px;
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.menu__item-link:hover + .marquee {
+  transform: translate3d(0, 0%, 0);
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Demo page layout */
+.flowing-menu-page {
+  margin: 0;
+  min-height: 80vh;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  background: #fff;
+  color: #111;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  overflow: hidden;
+}
+
+.flowing-menu-page main.menu-demo {
+  flex: 1;
+  min-height: 0;
+  height: auto;
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.flowing-menu-page .menu-demo {
+  width: 100%;
+}
+
+.flowing-menu-page .menu-demo__title {
+  margin: 4vh 4vw 24px;
+  font-size: clamp(2rem, 3vw, 2.6rem);
+  letter-spacing: 0.08em;
+}
+
+.flowing-menu-page .menu-demo__hint {
+  margin: 0 4vw 32px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.flowing-menu-page [data-menu-root] {
+  width: 100%;
+  height: 100%;
+}
+
+.flowing-menu-page .script-bundle {
+  margin: 0;
+}
+
+.flowing-menu-page .menu-demo {
+  margin: 0;
+  padding: 0;
+}
+
+.flowing-menu-page .menu-wrap {
+  min-height: 100%;
+  height: 100%;
+  flex: 1;
+}
+
+.menu__item-link span {
+  display: inline-block;
+}
+
+.menu__item-label {
+  display: inline-block;
+}
+
+.menu__item-label .char {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.menu.menu--ready .menu__item-label .char {
+  animation: char-reveal 0.55s ease forwards;
+  animation-delay: calc(var(--item-delay, 0s) + var(--char-index, 0) * var(--char-stagger, 0.07s));
+}
+
+.menu__item:nth-child(3) .menu__item-link span br {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .menu__item:nth-child(3) .menu__item-link span {
+    display: block;
+    white-space: normal;
+    line-height: 1.4;
+  }
+  .menu__item:nth-child(3) .menu__item-link span br {
+    display: block;
+  }
+}
+
+@keyframes menu-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes char-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
